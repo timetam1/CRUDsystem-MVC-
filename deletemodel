@@ -1,0 +1,26 @@
+# CRUDsystem-MVC-
+
+<?php
+$id = $_POST['id'];
+class deletemodel{
+	public $id;
+	public function del($id){
+		try{
+			$db = new PDO('mysql:host=localhost;dbname=shop11;charset=utf8','root','root');
+			$db->beginTransaction();
+			$sql = 'DELETE FROM pro WHERE id=?';
+			$stmt = $db->prepare($sql);
+			$stmt->bindValue(1,$id);
+			$stmt->execute();
+			$db->commit();
+			print '削除しました';
+
+		}catch(PDOException $b){
+			print $b;
+		}
+
+	}
+}
+
+
+?>
