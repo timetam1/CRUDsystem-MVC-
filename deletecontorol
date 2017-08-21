@@ -1,0 +1,15 @@
+# CRUDsystem-MVC-
+<?php
+class delete{
+	public function de(){
+
+?>
+<p>削除画面です</p>
+<form action = "delete2.php" method = "post">
+	<input type = "text" name = "id">
+	<input type = "submit" value = "送信する">
+</form>
+<?php
+}
+}
+?>
